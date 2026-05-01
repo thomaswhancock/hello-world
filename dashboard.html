@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#dashboard">Dashboard</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="dashboard">
+      <div class="dashboard-header">
+        <h2>NYSE Stock Dashboard</h2>
+        <div class="dashboard-controls">
+          <button class="btn-sm" id="refreshBtn">Refresh</button>
+          <span id="lastUpdated" class="muted"></span>
+        </div>
+      </div>
+
+      <div id="apiKeyBanner" class="api-banner">
+        <p>A free Finnhub API key is required. <a href="https://finnhub.io/register" target="_blank">Get one here</a>, then enter it below.</p>
+        <div class="api-key-form">
+          <input type="text" id="apiKeyInput" placeholder="Enter your Finnhub API key" />
+          <button class="btn-sm" id="saveKeyBtn">Save</button>
+        </div>
+      </div>
+
+      <div class="add-stock-row">
+        <input type="text" id="tickerInput" placeholder="Add ticker (e.g. NVDA)" maxlength="10" />
+        <button class="btn-sm" id="addStockBtn">Add</button>
+        <span id="addError" class="error-msg"></span>
+      </div>
+
+      <div id="stockGrid" class="stock-grid">
+        <!-- Cards injected by JS -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Hello World. Data provided by <a href="https://finnhub.io" target="_blank">Finnhub</a>.</p>
+  </footer>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
